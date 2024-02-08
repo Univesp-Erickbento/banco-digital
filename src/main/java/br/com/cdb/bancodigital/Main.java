@@ -19,6 +19,8 @@ public class Main {
         System.out.println("===============================================");
 
         System.out.println("Escolha uma opção!!!!");
+        CriarTarefas criarTarefas = new CriarTarefas();
+       // Tarefa t = new Tarefa();
         while (opcao != 6) {
             System.out.println("Digite 1 para adicionar uma Tarefa nova");
             System.out.println("Digite 2 para Remover uma tarefa existente");
@@ -27,50 +29,24 @@ public class Main {
             System.out.println("Digite 5 colocar as tarefas em ordem cronológica");
             System.out.println("Digite 6 para Sair do Sistema !!!");
 
-
-            CriarTarefas criarTarefas = new CriarTarefas();
-         //   Tarefa t = new Tarefa();
             opcao = input.nextInt();
-//            List<String> nomeTarefas = new ArrayList<>(List.of("Fazer Café", "Lavar Roupa", "Arrumar a casa", "Passar Roupa"));
+
             List<String> listaDeString = new ArrayList<>();
             List<Tarefa> listarefas = new ArrayList<>();
-//            for (int i = 1; i <= nomeTarefas.size(); i++) {
-//                Tarefa tarefa = new Tarefa(i, nomeTarefas.get(i - 1));
-//                listarefas.add(tarefa);
-//                criarTarefas.adicionarTarefa(tarefa);
-
-   //         }
-
 
             switch (opcao) {
                 case 1:
                     System.out.println("Digite o nome da tarefa que voçê deseja adicionar na lista de tarefas");
                     nomeDaTarefa = input.next();
-                   // listaDeString.add(nomeDaTarefa);
-                    //t.setNome(nomeDaTarefa);
-                  //  for (int i = 1; i <= listaDeString.size(); i++) {
-             // Tarefa t = new Tarefa(i, listaDeString.get(i - 1));
                     Tarefa t = new Tarefa(nomeDaTarefa);
-              // listarefas.add(t);
-                criarTarefas.adicionarTarefa(t);
-
-                               // }
-
-
-
-//                    listarefas.add(t);
-//                    criarTarefas.adicionarTarefa(t);
-//                    for (Tarefa listaDeTarefa : criarTarefas.listaDeTarefas) {
-                        
-
-
+                     criarTarefas.adicionarTarefa(t);
                     break;
 
                 case 2:
                     System.out.println("Digite o nome da tarefa que voçê deseja REMOVER na lista de tarefas");
                     nomeDaTarefa = input.next();
-                  //  t.setNome(nomeDaTarefa);
-                 //   criarTarefas.removerTarefas(t);
+                    Tarefa t1 = new Tarefa(nomeDaTarefa);
+                    criarTarefas.removerTarefas(t1);
                     break;
 
                 case 3:
@@ -80,20 +56,13 @@ public class Main {
 
                 case 4:
 
-                    List<String> nomeTarefas4 = new ArrayList<>(List.of("Fazer Café", "Lavar Roupa", "Arrumar a casa", "Passar Roupa"));
-                    List<Tarefa> listarefas4 = new ArrayList<>();
-                    for (int i = 1; i <= nomeTarefas4.size(); i++) {
-                    //    Tarefa tarefa = new Tarefa(i, nomeTarefas4.get(i - 1));
-                      //  listarefas4.add(tarefa);
-                      //  criarTarefas.adicionarTarefa(tarefa);
+                    criarTarefas.tarefasEmOrdemAlfabetica();
 
-                        criarTarefas.tarefasEmOrdemAlfabetica(listarefas4);
-                    }
                     System.out.println("Tarefas Listada em ordem Alfabética");
                     break;
 
                 case 5:
-                    criarTarefas.tarefasCronologicas(criarTarefas.getListaDeTarefas());
+                    criarTarefas.tarefasCronologicas();
                     System.out.println("Tarefas Listada na ordem cronológica");
                     break;
 

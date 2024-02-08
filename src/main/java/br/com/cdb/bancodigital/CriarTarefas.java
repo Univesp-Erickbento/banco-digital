@@ -12,7 +12,7 @@ public class CriarTarefas {
     public List<Tarefa> adicionarTarefa(Tarefa tarefa1) {
         if (!listaDeTarefas.contains(tarefa1)) {
             listaDeTarefas.add(tarefa1);
-            System.out.println(listaDeTarefas.get(0));
+            
             System.out.println("----------------------------------------------------------------------");
        System.out.println("Tarefa adicionada com Sucesso");
             System.out.println("----------------------------------------------------------------------");
@@ -20,44 +20,65 @@ public class CriarTarefas {
 
         return listaDeTarefas;
     }
-    public void removerTarefas(Tarefa tarefa1){
-          listaDeTarefas.remove(tarefa1);
-        System.out.println("----------------------------------------------------------------------");
-        System.out.println("Tarefa Removida com Sucesso");
-        System.out.println("----------------------------------------------------------------------");
-
+    public List<Tarefa> removerTarefas(Tarefa tarefa1){
+        listartarefas();
+        if (listaDeTarefas.contains(tarefa1)) {
+            listaDeTarefas.remove(listaDeTarefas.remove(tarefa1));
+            System.out.println("----------------------------------------------------------------------");
+            System.out.println("Tarefa Removida com Sucesso");
+            System.out.println("----------------------------------------------------------------------");
+        }else {
+            System.out.println("Não existe essa tarefa na lista ");
+        }
+        return listaDeTarefas;
     }
 
     public List<Tarefa> listartarefas (){
+        System.out.println("----------------------------------------------------------------------");
+        System.out.println("Essa é a sua lista de tarefas");
 
-
-            System.out.println(listaDeTarefas);
-            System.out.println("Debag3");
-
-
-
+        for (int i = 0; i < listaDeTarefas.size(); i++) {
+            System.out.println(listaDeTarefas.get(i));
+        }
+        System.out.println("----------------------------------------------------------------------");
 
         return listaDeTarefas;
     }
-    public List<Tarefa> tarefasEmOrdemAlfabetica(List<Tarefa> lista) {
+    public List<Tarefa> tarefasEmOrdemAlfabetica() {
 
-        lista.sort(new Comparator<Tarefa>() {
+        listaDeTarefas.sort(new Comparator<Tarefa>() {
             @Override
             public int compare(Tarefa o1, Tarefa o2) {
                 return o1.getNome().compareTo(o2.getNome());
             }
         });
-        return lista;
-    }
-    public List<Tarefa> tarefasCronologicas(List<Tarefa> lista){
+        System.out.println("----------------------------------------------------------------------");
+        System.out.println("Essa é a sua lista de tarefas por Ordem Alfabética");
 
-        lista.sort(new Comparator<Tarefa>() {
+        for (int i = 0; i < listaDeTarefas.size(); i++) {
+            System.out.println(listaDeTarefas.get(i));
+        }
+        System.out.println("----------------------------------------------------------------------");
+        return listaDeTarefas;
+
+
+    }
+    public List<Tarefa> tarefasCronologicas(){
+
+        listaDeTarefas.sort(new Comparator<Tarefa>() {
             @Override
             public int compare(Tarefa o1, Tarefa o2) {
                 return o1.getData().compareTo(o2.getData());
             }
         });
-        return lista;
+
+        System.out.println("----------------------------------------------------------------------");
+        System.out.println("Essa é a sua lista de tarefas por Ordem Alfabética");
+
+        for (int i = 0; i < listaDeTarefas.size(); i++) {
+            System.out.println(listaDeTarefas.get(i));
+        }
+        return listaDeTarefas;
     }
 
 

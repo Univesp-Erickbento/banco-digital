@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class Tarefa implements Comparable<Tarefa> {
 
-    public static int proximoId=0;
+    public static int proximoId=1;
     private int id;
 
     private String nome;
