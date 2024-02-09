@@ -54,7 +54,8 @@ public class Tarefa implements Comparable<Tarefa> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Tarefa tarefa)) return false;
-        return getId() == tarefa.getId();
+        return getNome().equals(tarefa.getNome());
+
     }
 
     @Override
@@ -64,14 +65,7 @@ public class Tarefa implements Comparable<Tarefa> {
 
     @Override
     public String toString() {
-        return "" + id + "-" + nome ;
-
-
-
-
-//        return "Tarefa{" +
-//                "nome='" + nome + '\'' +
-//
+        return "" +  nome ;
 
     }
 
@@ -82,9 +76,4 @@ public class Tarefa implements Comparable<Tarefa> {
         }
         return this.id;
     }
-
-    // @Override
-//    public int compareTo(Tarefa tarefa) {
-//        return this.data<tarefa.data;
-//    }
 }
